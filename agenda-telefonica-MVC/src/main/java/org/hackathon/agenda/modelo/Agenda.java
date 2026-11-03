@@ -98,7 +98,16 @@ public class Agenda {
         }
         return null;
     }
-//    public String buscarContacto(String nombre, String apellido){
-//        Contacto encontrado = locali
-//    }
+
+    /**
+     * Devuelve el telefono del contacto a buscar y si no devuelve
+     * null
+     * @param nombre
+     * @param apellido
+     * @return
+     */
+    public String buscarContacto(String nombre, String apellido){
+        Contacto encontrado = localizar(nombre, apellido);
+        return (encontrado == null) ? null : encontrado.getTelefono();
+    }
 }
