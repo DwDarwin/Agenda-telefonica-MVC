@@ -78,4 +78,27 @@ public class Agenda {
         copiaLista.sort(Comparator.comparing(Contacto::getApellido, String.CASE_INSENSITIVE_ORDER).thenComparing(Contacto::getNombre, String.CASE_INSENSITIVE_ORDER));
         return copiaLista;
     }
+
+    /**
+     * Metodo auxiliar que busca por nombre y apellido ignorando si es minuscula o mayuscula
+     * @param nombre
+     * @param apellido
+     * @return null
+     */
+    private Contacto localizar(String nombre, String apellido){
+        if (nombre == null || apellido == null){
+            return null;
+        }
+        String nombreBuscado = nombre.trim();
+        String apellidoBuscado = apellido.trim();
+        for (Contacto contacto : contactos){
+            if (contacto.getNombre().equalsIgnoreCase(nombreBuscado) && contacto.getApellido().equalsIgnoreCase(apellidoBuscado)){
+                return contacto;
+            }
+        }
+        return null;
+    }
+//    public String buscarContacto(String nombre, String apellido){
+//        Contacto encontrado = locali
+//    }
 }
