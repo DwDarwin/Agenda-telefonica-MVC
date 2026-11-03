@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="BpmStudioProjectModulesStateV2">
+    <option name="hasState" value="true" />
+    <option name="moduleState">
+      <BpmStudioModuleStateV2>
+        <option name="artifactGroup" value="org.example" />
+        <option name="artifactVersion" value="1.0-SNAPSHOT" />
+        <option name="buildFilePath" value="D:\Generation\Clases\T\JV\Hackton\Programa\Agenda-telefonica-MVC\agenda-telefonica-MVC\build.gradle.kts" />
+        <option name="buildSystemName" value="Gradle" />
+        <option name="classesDir" value="D:\Generation\Clases\T\JV\Hackton\Programa\Agenda-telefonica-MVC\agenda-telefonica-MVC\build\classes\java\main" />
+        <option name="dependencies">
+          <Dependency configuration="testImplementation" group="org.junit.jupiter" name="junit-jupiter" />
+          <Dependency configuration="testRuntimeOnly" group="org.junit.platform" name="junit-platform-launcher" />
+        </option>
+        <option name="jarFile" value="D:\Generation\Clases\T\JV\Hackton\Programa\Agenda-telefonica-MVC\agenda-telefonica-MVC\build\libs\agenda-telefonica-MVC-1.0-SNAPSHOT.jar" />
+        <option name="mavenLocal" value="true" />
+        <option name="mavenLocalURI" value="file:/$MAVEN_REPOSITORY$/" />
+        <option name="moduleName" value="agenda-telefonica-MVC" />
+        <option name="rootBuildFilePath" value="D:\Generation\Clases\T\JV\Hackton\Programa\Agenda-telefonica-MVC\agenda-telefonica-MVC\build.gradle.kts" />
+        <option name="rootProjectName" value="agenda-telefonica-MVC" />
+        <option name="stateBuildScriptRepositories">
+          <Repository url="https://plugins.gradle.org/m2" />
+        </option>
+        <option name="stateRepositories">
+          <Repository url="https://repo.maven.apache.org/maven2/" />
+        </option>
+      </BpmStudioModuleStateV2>
+    </option>
+  </component>
+</module>
