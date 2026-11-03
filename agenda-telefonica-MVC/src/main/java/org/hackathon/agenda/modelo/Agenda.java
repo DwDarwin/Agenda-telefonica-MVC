@@ -40,4 +40,13 @@ public class Agenda {
     public boolean existeContacto(Contacto c){
         return c != null && contactos.contains(c);
     }
+
+    /**
+     * Calcula el tamaño de la lista y lo compara con la capacidad maxima
+     * para saber si ya llena la agenda
+     * @return
+     */
+    public boolean agendaLlena(){
+        return contactos.size() >= capacidadMaxima;
+    }
 }
