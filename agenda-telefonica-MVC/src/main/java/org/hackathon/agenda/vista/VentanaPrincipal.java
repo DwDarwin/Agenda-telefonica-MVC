@@ -20,6 +20,7 @@ public class VentanaPrincipal extends JFrame {
     private JButton btnModificar;
     private JButton btnEliminar;
     private JButton btnLimpiar;
+    private JLabel contador;
 
     public VentanaPrincipal() {
 
@@ -52,6 +53,9 @@ public class VentanaPrincipal extends JFrame {
     public JButton getBtnModificar() { return btnModificar; }
     public JButton getBtnEliminar() { return btnEliminar; }
     public JButton getBtnLimpiar() { return btnLimpiar; }
+    public JLabel getContador() {
+        return contador;
+    }
 
     public void cargarCamposDesdeTabla() {
         int filaSeleccionada = tablaContactos.getSelectedRow();
@@ -81,6 +85,10 @@ public class VentanaPrincipal extends JFrame {
             modelo.addRow(fila);
         }
 
+        if (contador != null) {
+            contador.setText("Total de contactos: " + contactos.size());
+        }
+
         mostrarMensaje("Tabla actualizada (" + contactos.size() + " contactos)", true);
     }
 
@@ -97,3 +105,4 @@ public class VentanaPrincipal extends JFrame {
 
 
 }
+

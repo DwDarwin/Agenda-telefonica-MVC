@@ -117,6 +117,14 @@
               <text value="Estado"/>
             </properties>
           </component>
+          <component id="32714" class="javax.swing.JLabel" binding="contador">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="cant. Contactos"/>
+            </properties>
+          </component>
         </children>
       </grid>
       <scrollpane id="7386e">
