@@ -121,4 +121,22 @@ public class Agenda {
         return c != null && contactos.remove(c);
     }
 
+    /**
+     * Modificca el telefono de un contacto existente,
+     * si el contacto no existe devuelve false
+     *
+     * @param nombre
+     * @param apellido
+     * @param nuevoTelefono
+     * @return
+     */
+    public boolean modificarTelefono(String nombre, String apellido, String nuevoTelefono) {
+        Contacto encontrado = localizar(nombre, apellido);
+        if (encontrado == null) {
+            return false;
+        }
+        encontrado.setTelefono(nuevoTelefono);
+        return true;
+    }
+
 }
