@@ -1,11 +1,13 @@
 package org.hackathon.agenda.vista;
 
+import org.hackathon.agenda.modelo.Contacto;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
 
-public class VentanaPrincipal {
+public class VentanaPrincipal extends JFrame {
 
     private JTable tablaContactos;
     private JPanel panelPrincipal;
@@ -20,10 +22,15 @@ public class VentanaPrincipal {
     private JButton btnLimpiar;
 
     public VentanaPrincipal() {
-        SwingUtilities.invokeLater(() -> {
-            configurarTabla();
-        });
+
+        setContentPane(panelPrincipal);
+        setTitle("Agenda Telefenica");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+        configurarTabla();
     }
+
     private void configurarTabla() {
         String[] columnas = {"ID", "Nombre", "Apellido", "Teléfono"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0) {
@@ -46,6 +53,15 @@ public class VentanaPrincipal {
     public JButton getBtnEliminar() { return btnEliminar; }
     public JButton getBtnLimpiar() { return btnLimpiar; }
 
+    public void cargarCamposDesdeTabla() {
+        int filaSeleccionada = tablaContactos.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            txtNombre.setText(tablaContactos.getValueAt(filaSeleccionada, 1).toString());
+            txtApellido.setText(tablaContactos.getValueAt(filaSeleccionada, 2).toString());
+            txtTelefono.setText(tablaContactos.getValueAt(filaSeleccionada, 3).toString());
+        }
+    }
+
     public void mostrarMensaje(String mensaje, boolean exitoso) {
         lblEstado.setText(mensaje);
         if (exitoso) {
@@ -55,9 +71,15 @@ public class VentanaPrincipal {
         }
     }
 
-    public void actualizarTabla(List<Object> contactos) {
+    public void actualizarTabla(List<Contacto> contactos) {
         DefaultTableModel modelo = (DefaultTableModel) tablaContactos.getModel();
         modelo.setRowCount(0);
+
+        int id = 1;
+        for (Contacto c : contactos) {
+            Object[] fila = { id++, c.getNombre(), c.getApellido(), c.getTelefono() };
+            modelo.addRow(fila);
+        }
 
         mostrarMensaje("Tabla actualizada (" + contactos.size() + " contactos)", true);
     }
