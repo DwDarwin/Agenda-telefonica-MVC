@@ -67,4 +67,15 @@ public class Agenda {
         }
         contactos.add(c);
     }
+
+    /**
+     * Devuelve una copia de la lista ordenada con el metodo sort()
+     * @return
+     */
+    public List<Contacto> listarContactos(){
+        List<Contacto> copiaLista = new ArrayList<>(contactos);
+
+        copiaLista.sort(Comparator.comparing(Contacto::getApellido, String.CASE_INSENSITIVE_ORDER).thenComparing(Contacto::getNombre, String.CASE_INSENSITIVE_ORDER));
+        return copiaLista;
+    }
 }
