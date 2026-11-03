@@ -20,9 +20,10 @@ public class VentanaPrincipal extends JFrame {
     private JButton btnModificar;
     private JButton btnEliminar;
     private JButton btnLimpiar;
+    private JLabel contador;
 
     public VentanaPrincipal() {
-        inicializarComponentes();
+
         setContentPane(panelPrincipal);
         setTitle("Agenda Telefenica");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,51 +32,8 @@ public class VentanaPrincipal extends JFrame {
         configurarTabla();
     }
 
-    private void inicializarComponentes() {
-        panelPrincipal = new JPanel(new BorderLayout(10, 10));
-        panelPrincipal.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        JPanel formPanel = new JPanel(new GridLayout(9, 2, 5, 5));
-
-        JLabel lblNombre = new JLabel("Nombre");
-        txtNombre = new JTextField(15);
-        JLabel lblApellido = new JLabel("Apellido");
-        txtApellido = new JTextField(15);
-        JLabel lblTelefono = new JLabel("Telefono");
-        txtTelefono = new JTextField(15);
-
-        btnAgregar = new JButton("Agregar");
-        btnAgregar.setBackground(new Color(-12256712));
-        btnBuscar = new JButton("Buscar");
-        btnModificar = new JButton("Modificar");
-        btnEliminar = new JButton("Eliminar");
-        btnEliminar.setBackground(new Color(-390900));
-        btnLimpiar = new JButton("Limpiar");
-
-        lblEstado = new JLabel("Estado");
-
-        formPanel.add(lblNombre);
-        formPanel.add(txtNombre);
-        formPanel.add(lblApellido);
-        formPanel.add(txtApellido);
-        formPanel.add(lblTelefono);
-        formPanel.add(txtTelefono);
-        formPanel.add(btnAgregar);
-        formPanel.add(btnBuscar);
-        formPanel.add(btnModificar);
-        formPanel.add(btnEliminar);
-        formPanel.add(btnLimpiar);
-        formPanel.add(lblEstado);
-
-        tablaContactos = new JTable();
-        JScrollPane scrollPane = new JScrollPane(tablaContactos);
-
-        panelPrincipal.add(formPanel, BorderLayout.WEST);
-        panelPrincipal.add(scrollPane, BorderLayout.CENTER);
-    }
-
     private void configurarTabla() {
-        String[] columnas = {"ID", "Nombre", "Apellido", "Teléfono"};
+        String[] columnas = {"Nombre", "Apellido", "Teléfono"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -95,6 +53,9 @@ public class VentanaPrincipal extends JFrame {
     public JButton getBtnModificar() { return btnModificar; }
     public JButton getBtnEliminar() { return btnEliminar; }
     public JButton getBtnLimpiar() { return btnLimpiar; }
+    public JLabel getContador() {
+        return contador;
+    }
 
     public void cargarCamposDesdeTabla() {
         int filaSeleccionada = tablaContactos.getSelectedRow();
@@ -124,6 +85,10 @@ public class VentanaPrincipal extends JFrame {
             modelo.addRow(fila);
         }
 
+        if (contador != null) {
+            contador.setText("Total de contactos: " + contactos.size());
+        }
+
         mostrarMensaje("Tabla actualizada (" + contactos.size() + " contactos)", true);
     }
 
@@ -138,4 +103,6 @@ public class VentanaPrincipal extends JFrame {
         return panelPrincipal;
     }
 
+
 }
+
