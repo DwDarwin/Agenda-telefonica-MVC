@@ -49,4 +49,22 @@ public class Agenda {
     public boolean agendaLlena(){
         return contactos.size() >= capacidadMaxima;
     }
+
+    /**
+     * Añade un contacto si no existe, si no es nulo y si la agenda
+     * no esta llena
+     * @param c
+     */
+    public void añadirConctacto(Contacto c){
+        if (c == null){
+            throw new IllegalArgumentException("El contacto no puede ser nulo");
+        }
+        if (existeContacto(c)){
+            throw new IllegalArgumentException("El contacto ya existe en la agenda");
+        }
+        if (agendaLlena()){
+            throw new IllegalArgumentException("La agenda esta llena");
+        }
+        contactos.add(c);
+    }
 }
