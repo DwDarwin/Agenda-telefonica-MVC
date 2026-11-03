@@ -1,6 +1,6 @@
-package org.hackathon.agenda.vista;
+package com.hackathon.agenda.vista;
 
-import org.hackathon.agenda.modelo.Contacto;
+import com.hackathon.agenda.modelo.Contacto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

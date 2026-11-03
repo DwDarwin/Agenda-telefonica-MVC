@@ -10,3 +10,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Build output ###
+out/
+*.class

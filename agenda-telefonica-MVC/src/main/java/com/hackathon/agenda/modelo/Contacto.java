@@ -1,4 +1,4 @@
-package main.java.org.hackathon.agenda.modelo;
+package com.hackathon.agenda.modelo;
 
 import java.util.Objects;
 import java.util.regex.Pattern;
@@ -6,6 +6,14 @@ import java.util.regex.Pattern;
 public class Contacto {
 
   // RegEx para validar teléfonos (ej: +34 600 000 000, 600000000)
+  /*
+   * Ejemplos válidos que acepta este Regex:
+   * - 600000000          (9 dígitos continuos)[cite: 2]
+   * - 600 000 000        (9 dígitos separados en bloques de 3)
+   * - +34 600 000 000    (Con prefijo internacional y espacios)[cite: 2]
+   * - +34600000000       (Con prefijo internacional sin espacios)
+   * - +51 987 654 321    (Con otro código de país válido de 1 a 3 dígitos)
+   */
   private static final Pattern TELEFONO_PATTERN = Pattern.compile("^(\\+\\d{1,3}\\s?)?\\d{3}(\\s?\\d{3}){2}$|^\\d{9}$");
 
   private String nombre;
