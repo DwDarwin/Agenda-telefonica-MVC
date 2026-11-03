@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:agenda-telefonica-MVC/src/main/java/com/hackathon/agenda/modelo/Contacto.java
 package com.hackathon.agenda.modelo;
+========
+package org.hackathon.agenda.modelo;
+>>>>>>>> cc001b6 (controlador sin ventana y main):agenda-telefonica-MVC/src/org/hackathon/agenda/modelo/Contacto.java
 
 import java.util.Objects;
 import java.util.regex.Pattern;
