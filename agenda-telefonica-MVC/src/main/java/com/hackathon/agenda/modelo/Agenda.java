@@ -1,4 +1,4 @@
-package main.java.org.hackathon.agenda.modelo;
+package com.hackathon.agenda.modelo;
 
 import java.util.*;
 
