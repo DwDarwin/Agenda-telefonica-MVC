@@ -139,4 +139,13 @@ public class Agenda {
         return true;
     }
 
+    /**
+     * Devuelve la cantidad de contactos que aun se pueden añadir
+     * a la lista
+     * @return
+     */
+    public int espaciosLibres(){
+        return capacidadMaxima - contactos.size();
+    }
+
 }
