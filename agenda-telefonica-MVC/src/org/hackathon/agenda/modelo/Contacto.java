@@ -1,4 +1,4 @@
-package main.java.org.hackathon.agenda.modelo;
+package org.hackathon.agenda.modelo;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

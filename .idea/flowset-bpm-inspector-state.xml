@@ -18,6 +18,21 @@
             </FileInspectorState>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/agenda-telefonica-MVC/src/main/java/org/hackathon/agenda/vista/VentanaPrincipal.form">
+          <value>
+            <FileInspectorState>
+              <option name="statesByElementId">
+                <map>
+                  <entry key="Form_0f09ge9">
+                    <value>
+                      <ExpandedItems />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </FileInspectorState>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
