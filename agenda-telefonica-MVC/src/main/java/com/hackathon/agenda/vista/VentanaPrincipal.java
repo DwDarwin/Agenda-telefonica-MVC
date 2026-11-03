@@ -1,4 +1,4 @@
-package org.hackathon.agenda.vista;
+package com.hackathon.agenda.vista;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
