@@ -110,4 +110,15 @@ public class Agenda {
         Contacto encontrado = localizar(nombre, apellido);
         return (encontrado == null) ? null : encontrado.getTelefono();
     }
+
+    /**
+     * Elimina un contacto si existe y deuvelve true
+     * si lo elimino
+     * @param c
+     * @return
+     */
+    public boolean eliminarContacto(Contacto c){
+        return c != null && contactos.remove(c);
+    }
+
 }
