@@ -29,4 +29,15 @@ public class Agenda {
         this.capacidadMaxima = capacidadMaxima;
         this.contactos = new ArrayList<>();
     }
+
+    // Metodos
+
+    /**
+     * Metodo para validar si un conctaco existe y no es null
+     * @param c
+     * @return true
+     */
+    public boolean existeContacto(Contacto c){
+        return c != null && contactos.contains(c);
+    }
 }
