@@ -1,6 +1,6 @@
-package org.hackathon.agenda.vista;
+package com.hackathon.agenda.vista;
 
-import org.hackathon.agenda.modelo.Contacto;
+import com.hackathon.agenda.modelo.Contacto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -22,13 +22,56 @@ public class VentanaPrincipal extends JFrame {
     private JButton btnLimpiar;
 
     public VentanaPrincipal() {
-
+        inicializarComponentes();
         setContentPane(panelPrincipal);
         setTitle("Agenda Telefenica");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setLocationRelativeTo(null);
         configurarTabla();
+    }
+
+    private void inicializarComponentes() {
+        panelPrincipal = new JPanel(new BorderLayout(10, 10));
+        panelPrincipal.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        JPanel formPanel = new JPanel(new GridLayout(9, 2, 5, 5));
+
+        JLabel lblNombre = new JLabel("Nombre");
+        txtNombre = new JTextField(15);
+        JLabel lblApellido = new JLabel("Apellido");
+        txtApellido = new JTextField(15);
+        JLabel lblTelefono = new JLabel("Telefono");
+        txtTelefono = new JTextField(15);
+
+        btnAgregar = new JButton("Agregar");
+        btnAgregar.setBackground(new Color(-12256712));
+        btnBuscar = new JButton("Buscar");
+        btnModificar = new JButton("Modificar");
+        btnEliminar = new JButton("Eliminar");
+        btnEliminar.setBackground(new Color(-390900));
+        btnLimpiar = new JButton("Limpiar");
+
+        lblEstado = new JLabel("Estado");
+
+        formPanel.add(lblNombre);
+        formPanel.add(txtNombre);
+        formPanel.add(lblApellido);
+        formPanel.add(txtApellido);
+        formPanel.add(lblTelefono);
+        formPanel.add(txtTelefono);
+        formPanel.add(btnAgregar);
+        formPanel.add(btnBuscar);
+        formPanel.add(btnModificar);
+        formPanel.add(btnEliminar);
+        formPanel.add(btnLimpiar);
+        formPanel.add(lblEstado);
+
+        tablaContactos = new JTable();
+        JScrollPane scrollPane = new JScrollPane(tablaContactos);
+
+        panelPrincipal.add(formPanel, BorderLayout.WEST);
+        panelPrincipal.add(scrollPane, BorderLayout.CENTER);
     }
 
     private void configurarTabla() {
@@ -94,6 +137,5 @@ public class VentanaPrincipal extends JFrame {
     public JPanel getPanelPrincipal() {
         return panelPrincipal;
     }
-
 
 }

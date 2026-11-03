@@ -1,13 +1,15 @@
-package org.hackathon.agenda;
+package com.hackathon.agenda;
 
-import org.hackathon.agenda.controlador.AgendaControlador;
-import org.hackathon.agenda.modelo.Agenda;
-import org.hackathon.agenda.vista.VentanaPrincipal;
+import com.hackathon.agenda.controlador.AgendaControlador;
+import com.hackathon.agenda.modelo.Agenda;
+import com.hackathon.agenda.vista.VentanaPrincipal;
 
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Agenda Telefónica MVC compiló y se ejecuta correctamente");
+
         // Asegura que la interfaz gráfica corra en el hilo seguro de Swing
         SwingUtilities.invokeLater(() -> {
             // 1. Instanciar el Modelo (la lógica de la agenda con capacidad por defecto)

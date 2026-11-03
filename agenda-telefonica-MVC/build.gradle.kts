@@ -1,9 +1,14 @@
 plugins {
     id("java")
+    application
 }
 
-group = "org.example"
+group = "com.hackathon.agenda"
 version = "1.0-SNAPSHOT"
+
+application {
+    mainClass.set("com.hackathon.agenda.Main")
+}
 
 repositories {
     mavenCentral()
